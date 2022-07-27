@@ -9,7 +9,6 @@ function Events() {
 
   return (
     <>
-      <NavBar />
       <Find />
       {allEvents.map((event) => (
         <Card {...event} key={event.id} />

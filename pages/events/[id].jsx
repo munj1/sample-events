@@ -12,9 +12,13 @@ function EventDetail({ item }) {
   }
 
   const event = getEventById(queryId);
+
+  // if (!event) {
+  //   return <p>not exist</p>;
+  // }
+
   return (
     <>
-      <NavBar />
       <Detail {...event} />
     </>
   );

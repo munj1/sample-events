@@ -11,7 +11,6 @@ function HomePage() {
 
   return (
     <>
-      <NavBar />
       <Find />
       {featuredEvents.map((event) => (
         <Card {...event} key={event.id} />

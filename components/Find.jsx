@@ -1,23 +1,12 @@
 import React from "react";
 import { useState } from "react";
 import Link from "next/link";
-import { useRef } from "react";
 import { useEffect } from "react";
 
 const Find = (date) => {
   console.log("find is being rendered");
   const [year, setYear] = useState("2020");
   const [month, setMonth] = useState("1");
-  const yearRef = useRef();
-  const monthRef = useRef();
-
-  useEffect(() => {
-    if (date && yearRef.current && monthRef.current) {
-      console.log("yearRef", yearRef.current.options.selectedIndex);
-      yearRef.current.options.selectedIndex = parseInt(date.year) - 2020;
-      monthRef.current.options.selectedIndex = parseInt(date.month) - 1;
-    }
-  }, [date, yearRef, monthRef]);
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center items-center">
@@ -33,7 +22,6 @@ const Find = (date) => {
           name="year"
           className="ml-2 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
           defaultValue="2020"
-          ref={yearRef}
           onChange={(e) => {
             let selectedYear = e.target.options[e.target.selectedIndex].value;
             console.log(typeof selectedYear);
@@ -53,7 +41,6 @@ const Find = (date) => {
           Month
         </label>
         <select
-          ref={monthRef}
           id="month"
           name="month"
           className="ml-2 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"

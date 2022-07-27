@@ -12,7 +12,7 @@ export default function Card({
   const router = useRouter();
 
   return (
-    <div className="bg-white px-4 py-5 border-b border-gray-200 sm:px-6 w-60vw ">
+    <div className="bg-white px-4 py-5 border-b border-gray-200 sm:px-6 mx-auto">
       <div className="-ml-4 -mt-4 grid grid-cols-2 items-center gap-6">
         <div className="ml-4 mt-4 col-span-2 sm:col-span-1">
           <Image
